@@ -7,6 +7,8 @@ import ResumeBuilder from './pages/ResumeBuilder'
 import Preview from './pages/Preview'
 import Login from './pages/Login'
 
+
+
 const App = () => {
   return (
     <>
@@ -20,6 +22,7 @@ const App = () => {
 
         <Route path="view/:resumeId" element={<Preview/>}/>
         <Route path="login" element={<Login/>}/>
+      
 
       </Routes>
     </>
