@@ -12,7 +12,7 @@ const Dashboard = () => {
   const [showUploadResume , setShowUploadResume]=useState(false)
   const [title , setTitle]=useState("")
   const [resume , setResume]=useState(null)
-  const [editResumeId , setResumeId]=useState("")
+  const [editResumeId , setEditResumeId]=useState("")
 
 
 
@@ -31,6 +31,11 @@ const Dashboard = () => {
     event.preventDefault()
     setShowUploadResume(false)
     navigate(`/app/builder/res123`)
+  }
+
+  const editTitle=async (event)=>{
+    event.preventDefault()
+
   }
   useEffect(()=>{
     loadAllResumes()
@@ -57,6 +62,7 @@ const Dashboard = () => {
               const baseColor=colors[index%colors.length];
               return (
                 <button 
+                onClick={()=>navigate(`/app/builder/${resume._id}`)}
                 key={index} 
                 className="
                   relative w-full sm:max-w-36 h-48 flex flex-col items-center 
@@ -89,11 +95,12 @@ const Dashboard = () => {
                   </p>
 
 
-                <div className="absolute top-1 right-1 group-hover:flex items-center hidden">
+                <div onClick={e=>e.stopPropagation()} className="absolute top-1 right-1 group-hover:flex items-center hidden">
                 <TrashIcon
                   className="size-7 p-1.5 hover:bg-white/50 rounded text-slate-700 transition-colors"
                 />
                 <PencilIcon
+                  onClick={()=>{setEditResumeId(resume._id); setTitle(resume.title)}}
                   className="size-7 p-1.5 hover:bg-white/50 rounded text-slate-700 transition-colors"
                 />
               </div>
@@ -150,12 +157,49 @@ const Dashboard = () => {
                       )}
                   </div>
                 </label>
+                <input type='file' id='resume-input' accept='.pdf' hidden onChange={(e)=>setResume(e.target.files[0])}/>
               </div>
              <button className='w-full py-2 bg-[#742b09f7] text-white rounded  hover:bg-[#503326f7] transition-colors'>Upload Resume</button>
              <XIcon className='absolute top-4 right-4 text-slate-400  hover:text-slate-600 cursor-pointer transition-colors' onClick={() => { setShowUploadResume(false) ; setTitle('') }}/>
             </div>
           </form>
         )}
+
+
+        {editResumeId &&(
+          <form onSubmit={editTitle} onClick={()=>setResumeId(false)} className='fixed inset-0 bg-black/70 backdrop-blur bg-opacity-50 z-10 flex items-center justify-center'>
+            <div onClick={e=>e.stopPropagation()} className='relative bg-slate-50 border shadow-md rounded-lg w-full max-w-sm p-6'>
+              <h2 className='text-xl font-bold mb-4'>Upload a Resume</h2>
+              <input 
+                onChange={(e)=>setTitle(e.target.value)}
+                value={title}
+                type="text" 
+                placeholder='Enter resume title' 
+                className='w-full px-4 py-2 mb-4 focus:border-[#742b09f7] ring-[#742b09f7]' 
+                required 
+              />
+              <div>
+                <label htmlFor='resume-input' className='block text-sm text-slate-700'>
+                  Edit Resume Title
+                  <div className='flex flex-col items-center justify-center gap-2 border group text-slate-400 border-slate-400 border-dashed rounded-md p-4 py-10 my-4 hover:text-[#742b09f7]  hover:text-[#4c2907] cursor-pointer transition-colors'>
+                      {resume ? (
+                        <p className='text-green'>{resume.name}</p>
+                      ):(
+                        <>
+                          <UploadCloud className='size-14 stroke-1'/>
+                          <p>Upload Resume</p>
+                        </>
+                      )}
+                  </div>
+                </label>
+                <input type='file' id='resume-input' accept='.pdf' hidden onChange={(e)=>setResume(e.target.files[0])}/>
+              </div>
+             <button className='w-full py-2 bg-[#742b09f7] text-white rounded  hover:bg-[#503326f7] transition-colors'>Update</button>
+             <XIcon className='absolute top-4 right-4 text-slate-400  hover:text-slate-600 cursor-pointer transition-colors' onClick={() => { setResumeId('') ; setTitle('') }}/>
+            </div>
+          </form>
+        )}
+        
       </div>
     </div>
   )
