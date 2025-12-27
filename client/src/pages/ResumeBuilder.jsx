@@ -1,9 +1,51 @@
-import React from 'react'
+import { useParams, Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { dummyResume } from "../assets/assests";
+import { ArrowLeftIcon } from "lucide-react";
 
 const ResumeBuilder = () => {
-  return (
-    <div>ResumeBuilder</div>
-  )
-}
+  const { resumeId } = useParams();
+  const [resumeData, setResumeData] = useState({
+    _id: "",
+    title: "",
+    personal_info: {},
+    professional_summary: "",
+    experience: [],
+    education: [],
+    project: [],
+    skills: [],
+    template: "classic",
+    accent_color: "#3B82F6",
+    public: false,
+  });
+  // get the resume data from the resume id and get resume id from the url parameter
+  const loadExistingResume = async () => {
+    const resume = dummyResume.find((resume) => resume._id === resumeId);
+    if (resume) {
+      setResumeData(resume);
+      document.title = resume.title; //for updating the browser title
+    }
+  };
 
-export default ResumeBuilder
+  useEffect(() => {
+    if (resumeId) {
+      loadExistingResume();
+    }
+  }, [resumeId]);
+
+  return (
+    <div>
+      <div className="max-w-7xl mx-auto px-4 py-6">
+        <Link
+          to={"/app"}
+          className="inline-flex gap-2 items-center text-slate-500 hover:text-slate-700 transition-all"
+        >
+          <ArrowLeftIcon className="size-4" /> Back to Dashboard
+        </Link>{" "}
+        {/*when back icon is clicked will travel back to the dashboard */}
+      </div>
+    </div>
+  );
+};
+
+export default ResumeBuilder;
