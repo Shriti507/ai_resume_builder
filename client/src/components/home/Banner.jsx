@@ -5,6 +5,7 @@ const Banner = () => {
     <div>
       <div className="w-full py-2.5 font-medium text-sm text-[#8B5E34] text-center"
         style={{
+          /* Shimmer animation effect for visual emphasis */
           background: 'linear-gradient(90deg, #fdf6ee, #f5e6d3 40%, #fffaf5 60%, #fdf6ee)',
           backgroundSize: '200% auto',
           animation: 'shimmer 3s linear infinite',
