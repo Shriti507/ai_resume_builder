@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const Footer = () => {
+    /* Social identity links for the footer */
     const socials = [
         {
             href: '#',
