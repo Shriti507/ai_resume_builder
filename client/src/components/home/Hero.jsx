@@ -20,6 +20,7 @@ return (
                 <img src='/logo.svg' alt='logo' className='h-11 w-auto'/>
             </a>
 
+            {/* Desktop Navigation Links */}
             <div className="hidden md:flex items-center gap-8 transition duration-500 text-slate-800">
                 <a className="hover:text-[#704b2a] transition">Home</a>
                 <a href="#features" className="hover:text-[#704b2a] transition">Features</a>
