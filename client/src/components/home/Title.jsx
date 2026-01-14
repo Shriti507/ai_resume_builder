@@ -1,5 +1,6 @@
 import React from 'react'
 
+/** Common header component for section titles and descriptions */
 const Title = ({title, description}) => {
   return (
     <div className='text-center mt-6 text-slate-800'>
