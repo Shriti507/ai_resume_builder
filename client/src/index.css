@@ -2,6 +2,7 @@
 /* Global Styles Foundation - Initialized Jan 2026 */
 @import "tailwindcss";
 
+/* Primary brand color palette definition */
 :root {
   --brand-dark:   #5f3103;
   --brand:        #704b2a;
