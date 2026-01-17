@@ -16,7 +16,10 @@ const Banner = () => {
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#8B5E34] opacity-60"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-[#8B5E34]"></span>
           </span>
-          <span className="px-3 py-0.5 rounded-full text-white bg-[#8B5E34] text-xs font-semibold tracking-wide">New</span>
+          <span className="px-3 py-0.5 rounded-full text-white bg-[#8B5E34] text-xs font-semibold tracking-wide">
+            {/* Tag for highlighting new product updates */}
+            New
+          </span>
           AI-Powered Resume Builder — Land your dream job faster
         </p>
       </div>
