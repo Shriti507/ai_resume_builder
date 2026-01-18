@@ -63,6 +63,7 @@ return (
         {/* Hero Section */}
         <div className="relative flex flex-col items-center justify-center text-sm px-4 md:px-16 lg:px-24 xl:px-40 text-black overflow-hidden">
             {/* Decorative blob */}
+            {/* Ambient decorative background element */}
             <div className="absolute top-10 left-1/4 -z-10 size-96 rounded-full blur-[120px] opacity-25"
               style={{background: 'radial-gradient(circle, #d4956a 0%, #8B5E34 60%, transparent 100%)'}}
             ></div>
