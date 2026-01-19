@@ -54,6 +54,7 @@ const Features = () => {
                         <div className={`p-6 border border-transparent flex gap-4 rounded-xl transition-colors duration-200 ${feature.hoverBg} ${feature.hoverBorder} ${i === 0 && !isHover ? `${feature.activeBg} ${feature.activeBorder}` : ''}`}>
                           {feature.icon}
                           <div className="space-y-2">
+                            {/* Hover states and active transitions for interactivity */}
                             <h3 className="text-base font-semibold text-slate-700">{feature.name}</h3>
                             <p className="text-sm text-slate-600 max-w-xs">{feature.description}</p>
                           </div>
