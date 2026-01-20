@@ -31,6 +31,7 @@ const Footer = () => {
                 <img src='/logo.svg' alt='AI ResumeBuilder' className='h-10 w-auto brightness-0 invert opacity-90 mb-3' />
             </Link>
             <p className="text-sm font-medium text-white/80 mb-1">AI ResumeBuilder</p>
+            {/* Copyright and legal section */}
             <p className="mt-2 text-center text-sm text-white/50">© 2025 AI ResumeBuilder. All rights reserved.</p>
             <div className="flex items-center gap-5 mt-6">
                 {socials.map((s, i) => (
