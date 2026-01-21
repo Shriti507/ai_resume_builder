@@ -89,6 +89,7 @@ const Testimonial = () => {
             animation-direction: reverse;
         }
         .marquee-row:hover .marquee-inner {
+            /* Pause animation on hover for better readability */
             animation-play-state: paused;
         }
       `}</style>
