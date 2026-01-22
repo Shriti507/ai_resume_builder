@@ -7,3 +7,13 @@ An AI-powered application to help users build professional resumes quickly and e
 - Professional resume templates
 - Real-time preview and customization
 - One-click PDF export
+
+## Getting Started
+### Installation
+1. Clone the repository
+2. Install dependencies: `npm install`
+3. Start the development server: `npm run dev`
+
+### Usage
+- Navigate to `/app` to start building your resume.
+- Use the AI assistance to refine your bullet points.
