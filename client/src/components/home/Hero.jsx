@@ -69,6 +69,7 @@ return (
             ></div>
 
             {/* Avatars + Stars */}
+            {/* Social proof: User avatars and trust indicators */}
             <div className="flex items-center mt-24 animate-fade-in-up">
                 <div className="flex -space-x-3 pr-3">
                     <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200" alt="user3" className="size-8 object-cover rounded-full border-2 border-white hover:-translate-y-0.5 transition z-[1]" />
