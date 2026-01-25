@@ -35,7 +35,7 @@ const ResumeBuilder = () => {
 
   ]
 
-  const activeSections=sections[activeSectionIndex]
+  const activeSection=sections[activeSectionIndex]
 
   // get the resume data from the resume id and get resume id from the url parameter
   const loadExistingResume = async () => {
@@ -91,6 +91,17 @@ const ResumeBuilder = () => {
                   </div>
 
                 </div>
+
+
+                {/* form content */}
+                <div className="space-y-6">
+                  {activeSection.id === "personal" && (
+                    <div></div>
+                  )}
+                </div>
+
+
+
               </div>
           </div>
           {/* right pannel - resume preview */}
