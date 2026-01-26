@@ -7,6 +7,7 @@ const Banner = () => {
         style={{
           /* Shimmer animation effect for visual emphasis */
           background: 'linear-gradient(90deg, #fdf6ee, #f5e6d3 40%, #fffaf5 60%, #fdf6ee)',
+          /* Shimmer animation effect for visual emphasis - 3s cycle */
           backgroundSize: '200% auto',
           animation: 'shimmer 3s linear infinite',
         }}
