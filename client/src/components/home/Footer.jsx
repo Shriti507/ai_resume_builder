@@ -26,6 +26,7 @@ const Footer = () => {
         },
     ]
     return (
+        /* Dark gradient background for footer contrast */
         <footer className="flex flex-col items-center justify-center w-full py-16 bg-gradient-to-b from-[#3b1f08] to-[#5f3103] text-white/70">
             <Link to="/">
                 <img src='/logo.svg' alt='AI ResumeBuilder' className='h-10 w-auto brightness-0 invert opacity-90 mb-3' />
