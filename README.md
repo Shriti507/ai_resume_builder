@@ -17,3 +17,9 @@ An AI-powered application to help users build professional resumes quickly and e
 ### Usage
 - Navigate to `/app` to start building your resume.
 - Use the AI assistance to refine your bullet points.
+
+## Built With
+- **Frontend:** React, Tailwind CSS, Lucide React
+- **Icons:** Lucide React
+- **Fonts:** Google Fonts (Outfit)
+- **Deployment:** Vercel (recommended)
