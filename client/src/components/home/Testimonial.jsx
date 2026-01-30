@@ -66,6 +66,7 @@ const CreateCard = ({ card }) => (
 const Testimonial = () => {
   return (
     <div id="testimonials">
+      {/* Responsive container with scroll padding for anchor links */}
       <div className='flex flex-col items-center my-10 scroll-mt-12'>
         <div className="flex items-center gap-2 text-sm text-[#704b2a] bg-[#704b2a]/10 border border-[#704b2a]/40 rounded-full px-6 py-1.5">
             <BookUserIcon className='size-4 stroke-[#704b2a]'/>
