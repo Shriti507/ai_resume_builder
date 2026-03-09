@@ -1,57 +1,66 @@
 import React from 'react'
-import  {Zap} from 'lucide-react'
+import { FileText, Palette, Download } from 'lucide-react'
 import Title from './Title';
 
-const Features = () => {
+const features = [
+  {
+    icon: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-6 stroke-violet-600"><path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313-12.454z"/><path d="m17 4a2 2 0 0 0 2 2a2 2 0 0 0 -2 2a2 2 0 0 0 -2 -2a2 2 0 0 0 2 -2"/><path d="m19 11l1 1l-1 1"/></svg>,
+    name: 'AI-Powered Writing',
+    description: 'Let AI craft compelling bullet points, professional summaries and cover letters tailored to your target role.',
+    hoverBg: 'group-hover:bg-violet-100',
+    hoverBorder: 'group-hover:border-violet-300',
+    activeBg: 'bg-violet-100',
+    activeBorder: 'border-violet-300',
+  },
+  {
+    icon: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-6 stroke-green-600"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M7 7h10"/><path d="M7 12h10"/><path d="M7 17h4"/></svg>,
+    name: 'Beautiful Templates',
+    description: 'Choose from dozens of ATS-friendly, recruiter-approved resume templates and customize every detail.',
+    hoverBg: 'group-hover:bg-green-100',
+    hoverBorder: 'group-hover:border-green-300',
+    activeBg: '',
+    activeBorder: '',
+  },
+  {
+    icon: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-6 stroke-orange-500"><path d="M12 15V3"/><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/></svg>,
+    name: 'One-Click PDF Export',
+    description: 'Download a pixel-perfect PDF in seconds, ready to send directly to recruiters or upload to job portals.',
+    hoverBg: 'group-hover:bg-orange-100',
+    hoverBorder: 'group-hover:border-orange-300',
+    activeBg: '',
+    activeBorder: '',
+  },
+]
 
+const Features = () => {
     const [isHover, setIsHover] = React.useState(false);
 
     return (
         <div id='features' className='flex flex-col items-center my-10 scroll-mt-12'>
-        <div className="flex items-center gap-2 text-sm text-[#704b2a] bg-[#704b2a]/10 border border-[#704b2a] rounded-full px-6 py-1.5">
-            <Zap width={14}/>
-            <span>Simple Process</span>
-        </div>
-        <Title title='Build your resume' description='This is description this has to be changed'/>
-            <div className="flex flex-col md:flex-row items-center justify-center xl:-mt-10">
-                <img className="max-w-2xl w-full xl:-ml-32" src="https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/features/group-image-1.png" alt="" />
+          <div className="flex items-center gap-2 text-sm text-[#704b2a] bg-[#704b2a]/10 border border-[#704b2a]/40 rounded-full px-6 py-1.5">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+              <span>Simple Process</span>
+          </div>
+          <Title
+            title="Build your resume in minutes"
+            description="Our AI-powered builder guides you step by step — from your personal info to an export-ready PDF. No design skills needed."
+          />
+            <div className="flex flex-col md:flex-row items-center justify-center xl:-mt-10 mt-6">
+                <img className="max-w-2xl w-full xl:-ml-32" src="https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/features/group-image-1.png" alt="Resume builder preview" />
                 <div className="px-4 md:px-0" onMouseEnter={() => setIsHover(true)} onMouseLeave={() => setIsHover(false)}>
-                    <div className={"flex items-center justify-center gap-6 max-w-md group cursor-pointer"}>
-                        <div className={`p-6 group-hover:bg-violet-100 border border-transparent group-hover:border-violet-300  flex gap-4 rounded-xl transition-colors ${!isHover ? 'border-violet-300 bg-violet-100' : ''}`}>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-6 stroke-violet-600"><path d="M2.586 17.414A2 2 0 0 0 2 18.828V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h.172a2 2 0 0 0 1.414-.586l.814-.814a6.5 6.5 0 1 0-4-4z" /><circle cx="16.5" cy="7.5" r=".5" fill="currentColor" /></svg>
-                            <div className="space-y-2">
-                                <h3 className="text-base font-semibold text-slate-700">Real-Time Analytics</h3>
-                                <p className="text-sm text-slate-600 max-w-xs">Get instant insights into your finances with live dashboards.</p>
-                            </div>
+                    {features.map((feature, i) => (
+                      <div key={i} className="flex items-center justify-center gap-6 max-w-md group cursor-pointer">
+                        <div className={`p-6 border border-transparent flex gap-4 rounded-xl transition-colors duration-200 ${feature.hoverBg} ${feature.hoverBorder} ${i === 0 && !isHover ? `${feature.activeBg} ${feature.activeBorder}` : ''}`}>
+                          {feature.icon}
+                          <div className="space-y-2">
+                            <h3 className="text-base font-semibold text-slate-700">{feature.name}</h3>
+                            <p className="text-sm text-slate-600 max-w-xs">{feature.description}</p>
+                          </div>
                         </div>
-                    </div>
-                    <div className="flex items-center justify-center gap-6 max-w-md group cursor-pointer">
-                        <div className="p-6 group-hover:bg-green-100 border border-transparent group-hover:border-green-300 flex gap-4 rounded-xl transition-colors">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-6 stroke-green-600"><path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" /><path d="M18.375 2.625a1 1 0 0 1 3 3l-9.013 9.014a2 2 0 0 1-.853.505l-2.873.84a.5.5 0 0 1-.62-.62l.84-2.873a2 2 0 0 1 .506-.852z" /></svg>
-                            <div className="space-y-2">
-                                <h3 className="text-base font-semibold text-slate-700">Bank-Grade Security</h3>
-                                <p className="text-sm text-slate-600 max-w-xs">End-to-end encryption, 2FA, compliance with GDPR standards.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="flex items-center justify-center gap-6 max-w-md group cursor-pointer">
-                        <div className="p-6 group-hover:bg-orange-100 border border-transparent group-hover:border-orange-300 flex gap-4 rounded-xl transition-colors">
-                            <svg className="size-6 stroke-orange-600" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 15V3" /><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><path d="m7 10 5 5 5-5" /></svg>
-                            <div className="space-y-2">
-                                <h3 className="text-base font-semibold text-slate-700">Customizable Reports</h3>
-                                <p className="text-sm text-slate-600 max-w-xs">Export professional, audit-ready financial reports for tax or internal review.</p>
-                            </div>
-                        </div>
-                    </div>
+                      </div>
+                    ))}
                 </div>
             </div>
-            <style>{`
-                @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-            
-                * {
-                    font-family: 'Poppins', sans-serif;
-                }
-            `}</style>
         </div>
     );
 };

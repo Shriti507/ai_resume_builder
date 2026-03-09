@@ -1,8 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 @import "tailwindcss";
+
+:root {
+  --brand-dark:   #5f3103;
+  --brand:        #704b2a;
+  --brand-mid:    #8B5E34;
+  --brand-light:  #b16e34;
+  --brand-pale:   #e8d5c4;
+}
+
 *{
   font-family: "Outfit", sans-serif;
 }
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0);     }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.55s ease-out both;
+}
+
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
 
 @layer base{
   button{
@@ -10,11 +37,11 @@
   }
 
   input:not([type="checkbox"]){
-        @apply outline-none focus:ring border border-gray-300 
-        focus:ring-blue-500 focus:border-blue-500 rounded-lg;
+        @apply outline-none focus:ring border border-gray-300
+        focus:ring-amber-700 focus:border-amber-700 rounded-lg;
     }
     textarea {
-        @apply outline-none focus:ring border border-gray-300 
-        focus:ring-blue-500 focus:border-blue-500 rounded-lg resize-none;
+        @apply outline-none focus:ring border border-gray-300
+        focus:ring-amber-700 focus:border-amber-700 rounded-lg resize-none;
     }
 }

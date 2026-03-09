@@ -1,18 +1,24 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import { Sparkles } from 'lucide-react'
 
 const CallToAction = () => {
-    
     return (
-    <div className="border-y border-dashed border-slate-200 w-full max-w-5xl mx-auto px-16">
+    <div id="cta" className="border-y border-dashed border-slate-200 w-full max-w-5xl mx-auto px-16 scroll-mt-12 my-16">
         <div className="flex flex-col md:flex-row text-center md:text-left items-center justify-between gap-8 px-3 md:px-10 border-x border-dashed border-slate-200 py-20 -mt-10 -mb-10 w-full">
-            <p className="text-xl font-medium max-w-sm">Build a professional resume that get you stand out and hired.</p>
-            <button className="flex items-center gap-2 rounded-md py-3 px-5 bg-[#8B5E34] hover:bg-[#976e48] transition text-white">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-github-icon lucide-github">
-                    <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
-                    <path d="M9 18c-4.51 2-5-2-7-2" />
-                </svg>
-                <span>Get Started</span>
-            </button>
+            <div>
+              <p className="text-2xl font-semibold max-w-sm leading-snug text-slate-800">
+                Build a professional resume that gets you <span className="text-[#8B5E34]">noticed and hired.</span>
+              </p>
+              <p className="mt-2 text-slate-500 text-sm max-w-xs md:text-left text-center">Join 10,000+ professionals who've landed their dream roles.</p>
+            </div>
+            <Link
+              to="/login?state=register"
+              className="flex items-center gap-2 rounded-full py-3 px-8 bg-gradient-to-r from-[#8B5E34] to-[#704b2a] hover:from-[#9c6b3c] hover:to-[#8B5E34] transition-all duration-300 text-white shadow-lg shadow-[#704b2a]/30 active:scale-95 whitespace-nowrap"
+            >
+                <Sparkles size={18} />
+                <span>Get Started Free</span>
+            </Link>
         </div>
     </div>
 );
