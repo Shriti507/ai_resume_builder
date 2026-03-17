@@ -18,6 +18,13 @@ An AI-powered application to help users build professional resumes quickly and e
 - Navigate to `/app` to start building your resume.
 - Use the AI assistance to refine your bullet points.
 
+## Project Structure
+- `client/`: React frontend application
+  - `src/components/`: Reusable UI components
+  - `src/pages/`: Application pages
+  - `src/assets/`: Static assets (images, icons)
+- `public/`: Public static files
+
 ## Built With
 - **Frontend:** React, Tailwind CSS, Lucide React
 - **Icons:** Lucide React
