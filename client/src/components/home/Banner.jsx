@@ -2,7 +2,7 @@ import React from 'react'
 
 const Banner = () => {
   return (
-    <div>
+    <section>
       <div className="w-full py-2.5 font-medium text-sm text-[#8B5E34] text-center"
         style={{
           /* Shimmer animation effect for visual emphasis */
@@ -24,7 +24,7 @@ const Banner = () => {
           AI-Powered Resume Builder — Land your dream job faster
         </p>
       </div>
-    </div>
+    </section>
   )
 }
 
