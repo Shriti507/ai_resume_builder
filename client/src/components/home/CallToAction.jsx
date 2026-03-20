@@ -5,7 +5,7 @@ import { Sparkles } from 'lucide-react'
 const CallToAction = () => {
     return (
     <div id="cta" className="border-y border-dashed border-slate-200 w-full max-w-5xl mx-auto px-16 scroll-mt-12 my-16">
-        <div className="flex flex-col md:flex-row text-center md:text-left items-center justify-between gap-8 px-3 md:px-10 border-x border-dashed border-slate-200 py-20 -mt-10 -mb-10 w-full">
+        <div className="flex flex-col md:flex-row text-center md:text-left items-center justify-between gap-10 px-3 md:px-10 border-x border-dashed border-slate-200 py-20 -mt-10 -mb-10 w-full">
             <div>
               <p className="text-2xl font-semibold max-w-sm leading-snug text-slate-800">
                 Build a professional resume that gets you <span className="text-[#8B5E34]">noticed and hired.</span>
