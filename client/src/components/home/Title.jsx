@@ -1,6 +1,11 @@
 import React from 'react'
 
-/** Common header component for section titles and descriptions */
+/**
+ * Common header component for section titles and descriptions.
+ * @param {Object} props
+ * @param {string} props.title - The main heading text
+ * @param {string} props.description - The supporting subtext
+ */
 const Title = ({title, description}) => {
   return (
     <div className='text-center mt-6 text-slate-800'>
