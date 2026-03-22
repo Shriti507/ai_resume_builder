@@ -48,7 +48,7 @@ const Features = () => {
           />
             <div className="flex flex-col md:flex-row items-center justify-center xl:-mt-10 mt-6">
                 {/* Main product feature preview illustration */}
-                <img className="max-w-2xl w-full xl:-ml-32" src="https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/features/group-image-1.png" alt="Resume builder preview" />
+                <img className="max-w-2xl w-full xl:-ml-32" src="https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/features/group-image-1.png" alt="AI Resume Builder interface preview showing professional templates" />
                 <div className="px-4 md:px-0" onMouseEnter={() => setIsHover(true)} onMouseLeave={() => setIsHover(false)}>
                     {features.map((feature, i) => (
                       <div key={i} className="flex items-center justify-center gap-6 max-w-md group cursor-pointer">
