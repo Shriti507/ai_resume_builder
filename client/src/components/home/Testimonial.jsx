@@ -84,7 +84,7 @@ const Testimonial = () => {
             100% { transform: translateX(-50%); }
         }
         .marquee-inner {
-            animation: marqueeScroll 28s linear infinite;
+            animation: marqueeScroll 30s linear infinite;
         }
         .marquee-reverse {
             animation-direction: reverse;
